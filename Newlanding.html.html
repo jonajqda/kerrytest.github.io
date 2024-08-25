@@ -1,0 +1,568 @@
+<html><head><base href="https://windownsai.com/">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WindownsAI - Plataforma de IA para Emprendedores Digitales</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+:root {
+    --primary-color: #e50914;
+    --secondary-color: #e50914;
+    --background-color: #141414;
+    --text-color: #ffffff;
+    --card-background: #1f1f1f;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 20px 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+}
+
+.search-input {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px 0 0 4px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: var(--text-color);
+}
+
+.search-button {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    padding: 8px 12px;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+    background-color: #f40612;
+}
+
+.hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://source.unsplash.com/random/1600x900/?artificial-intelligence');
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    padding: 12px 24px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #f40612;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.app-category {
+    margin-top: 60px;
+}
+
+.category-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: var(--secondary-color);
+}
+
+.app-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.app-card {
+    background-color: var(--card-background);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.app-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.app-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.app-info {
+    padding: 15px;
+}
+
+.app-name {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.app-description {
+    font-size: 14px;
+    color: #ccc;
+    margin-bottom: 15px;
+}
+
+.app-button {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    padding: 8px 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.app-button:hover {
+    background-color: #f40612;
+}
+
+#blog {
+    margin-top: 60px;
+}
+
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.blog-card {
+    background-color: var(--card-background);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.blog-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.blog-info {
+    padding: 15px;
+}
+
+.blog-title {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.blog-excerpt {
+    font-size: 14px;
+    color: #ccc;
+    margin-bottom: 15px;
+}
+
+.blog-link {
+    display: inline-block;
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.blog-link:hover {
+    color: #f40612;
+}
+
+footer {
+    background-color: #0a0a0a;
+    padding: 60px 0;
+    color: var(--text-color);
+    margin-top: 60px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    flex: 1;
+    margin-right: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-section:last-child {
+    margin-right: 0;
+}
+
+.footer-title {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.footer-links {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--primary-color);
+}
+
+.newsletter-form {
+    display: flex;
+    margin-top: 20px;
+}
+
+.newsletter-input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--text-color);
+}
+
+.newsletter-button {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.newsletter-button:hover {
+    background-color: #f40612;
+    box-shadow: 0 0 10px rgba(229, 9, 20, 0.7);
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 40px;
+    color: var(--text-color);
+}
+
+/* Nuevo estilo para el título del blog */
+.blog-main-title {
+    color: #ffffff;
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="/" class="logo">WindownsAI</a>
+            <div class="nav-links">
+                <a href="/">Inicio</a>
+                <a href="#ai-apps">Apps</a>
+                <a href="#blog">Blog</a>
+            </div>
+            <div class="search-container">
+                <input type="text" placeholder="Buscar..." class="search-input">
+                <button class="search-button"><i class="fas fa-search"></i></button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Potencia tu negocio con IA</h1>
+                <p>Descubre las mejores herramientas de inteligencia artificial para emprendedores digitales</p>
+                <a href="#ai-apps" class="cta-button">Explora las Apps</a>
+            </div>
+        </section>
+
+        <section id="ai-apps" class="container">
+            <div class="app-category">
+                <h2 class="category-title">Asistentes Virtuales</h2>
+                <div class="app-grid">
+                    <div class="app-card">
+                        <img src="https://source.unsplash.com/random/400x300/?ai-assistant" alt="AI Assistant" class="app-image">
+                        <div class="app-info">
+                            <h3 class="app-name">AI Companion</h3>
+                            <p class="app-description">Asistente virtual avanzado para tareas diarias</p>
+                            <a href="https://windownsai.com/apps/ai-companion" class="app-button">Explorar</a>
+                        </div>
+                    </div>
+                    <div class="app-card">
+                        <img src="https://source.unsplash.com/random/400x300/?chatbot" alt="Chatbot" class="app-image">
+                        <div class="app-info">
+                            <h3 class="app-name">SmartChat</h3>
+                            <p class="app-description">Chatbot inteligente para atención al cliente</p>
+                            <a href="https://windownsai.com/apps/smartchat" class="app-button">Explorar</a>
+                        </div>
+                    </div>
+                    <div class="app-card">
+                        <img src="https://source.unsplash.com/random/400x300/?voice-assistant" alt="Voice Assistant" class="app-image">
+                        <div class="app-info">
+                            <h3 class="app-name">VoiceGenius</h3>
+                            <p class="app-description">Asistente de voz para control domótico</p>
+                            <a href="https://windownsai.com/apps/voicegenius" class="app-button">Explorar</a>
+                        </div>
+                    </div>
+                    <div class="app-card">
+                        <img src="https://source.unsplash.com/random/400x300/?ai-scheduler" alt="AI Scheduler" class="app-image">
+                        <div class="app-info">
+                            <h3 class="app-name">TimeMaster</h3>
+                            <p class="app-description">Organizador de tareas y citas con IA</p>
+                            <a href="https://windownsai.com/apps/timemaster" class="app-button">Explorar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="app-category">
+                <h2 class="category-title">Creatividad</h2>
+                <div class="app-grid">
+                    <div class="app-card">
+                        <img src="https://source.unsplash.com/random/400x300/?ai-art" alt="AI Art Generator" class="app-image">
+                        <div class="app-info">
+                            <h3 class="app-name">ArtisticAI</h3>
+                            <p class="app-description">Generador de imágenes artísticas con IA</p>
+                            <a href="https://windownsai.com/apps/artisticai" class="app-button">Explorar</a>
+                        </div>
+                    </div>
+                    <div class="app-card">
+                        <img src="https://source.unsplash.com/random/400x300/?text-generation" alt="Text Generator" class="app-image">
+                        <div class="app-info">
+                            <h3 class="app-name">WordCraft</h3>
+                            <p class="app-description">Generador de textos creativos y profesionales</p>
+                            <a href="https://windownsai.com/apps/wordcraft" class="app-button">Explorar</a>
+                        </div>
+                    </div>
+                    <div class="app-card">
+                        <img src="https://source.unsplash.com/random/400x300/?ai-music" alt="AI Music Composer" class="app-image">
+                        <div class="app-info">
+                            <h3 class="app-name">MelodyMind</h3>
+                            <p class="app-description">Compositor musical basado en IA</p>
+                            <a href="https://windownsai.com/apps/melodymind" class="app-button">Explorar</a>
+                        </div>
+                    </div>
+                    <div class="app-card">
+                        <img src="https://source.unsplash.com/random/400x300/?video-editing" alt="AI Video Editor" class="app-image">
+                        <div class="app-info">
+                            <h3 class="app-name">VideoWizard</h3>
+                            <p class="app-description">Editor de video automático con IA</p>
+                            <a href="https://windownsai.com/apps/videowizard" class="app-button">Explorar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="blog" class="container">
+            <h2 class="blog-main-title">Últimas entradas del blog</h2>
+            <div class="blog-grid">
+                <div class="blog-card">
+                    <img src="https://source.unsplash.com/random/400x300/?ai-business" alt="AI in Business" class="blog-image">
+                    <div class="blog-info">
+                        <h3 class="blog-title">Cómo la IA está transformando los negocios</h3>
+                        <p class="blog-excerpt">Descubre las últimas tendencias en IA y su impacto en el mundo empresarial.</p>
+                        <a href="https://windownsai.com/blog/ia-transformando-negocios" class="blog-link">Leer más</a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <img src="https://source.unsplash.com/random/400x300/?machine-learning" alt="Machine Learning" class="blog-image">
+                    <div class="blog-info">
+                        <h3 class="blog-title">Introducción al Machine Learning</h3>
+                        <p class="blog-excerpt">Aprende los conceptos básicos del aprendizaje automático y sus aplicaciones.</p>
+                        <a href="https://windownsai.com/blog/introduccion-machine-learning" class="blog-link">Leer más</a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <img src="https://source.unsplash.com/random/400x300/?ai-ethics" alt="AI Ethics" class="blog-image">
+                    <div class="blog-info">
+                        <h3 class="blog-title">Ética en la Inteligencia Artificial</h3>
+                        <p class="blog-excerpt">Exploramos los desafíos éticos que plantea el desarrollo de la IA.</p>
+                        <a href="https://windownsai.com/blog/etica-inteligencia-artificial" class="blog-link">Leer más</a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <img src="https://source.unsplash.com/random/400x300/?future-tech" alt="Future of AI" class="blog-image">
+                    <div class="blog-info">
+                        <h3 class="blog-title">El futuro de la IA: Tendencias para 2023</h3>
+                        <p class="blog-excerpt">Analizamos las principales tendencias en IA para el próximo año.</p>
+                        <a href="https://windownsai.com/blog/futuro-ia-tendencias-2023" class="blog-link">Leer más</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">WindownsAI</h3>
+                    <p>Empoderando emprendedores digitales con IA</p>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Enlaces rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="/">Inicio</a></li>
+                        <li><a href="#ai-apps">Apps</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="https://windownsai.com/about">Sobre nosotros</a></li>
+                        <li><a href="https://windownsai.com/contact">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://windownsai.com/terms">Términos de servicio</a></li>
+                        <li><a href="https://windownsai.com/privacy">Política de privacidad</a></li>
+                        <li><a href="https://windownsai.com/cookies">Política de cookies</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Suscríbete a nuestro newsletter</h3>
+                    <form class="newsletter-form" action="https://windownsai.com/subscribe" method="post">
+                        <input type="email" placeholder="Tu email" class="newsletter-input" required>
+                        <button type="submit" class="newsletter-button">Suscribirse</button>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 WindownsAI. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const header = document.querySelector('header');
+        const heroHeight = document.querySelector('.hero').offsetHeight;
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > heroHeight - 100) {
+                header.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
+            } else {
+                header.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Form submission
+        const newsletterForm = document.querySelector('.newsletter-form');
+        newsletterForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = newsletterForm.querySelector('input[type="email"]').value;
+            // Here you would typically send the email to your server
+            console.log(`Subscribing email: ${email}`);
+            alert('¡Gracias por suscribirte a nuestro newsletter!');
+            newsletterForm.reset();
+        });
+    });
+    </script>
+</body>
+</html>
